@@ -112,20 +112,10 @@ namespace Google.XR.Cardboard
                     (int)Screen.safeArea.x, (int)Screen.safeArea.y, (int)Screen.safeArea.width,
                     (int)Screen.safeArea.height);
 
-            Texture2D closeTexture = Resources.Load<Texture2D>(
-                    "Cardboard/quantum_ic_close_white_24");
-            Texture2D gearTexture = Resources.Load<Texture2D>(
-                    "Cardboard/quantum_ic_settings_white_24");
-            RectInt closeRect = Widget.CloseButtonRenderRect;
-            RectInt gearRect = Widget.GearButtonRenderRect;
+            
             RectInt alignmentRect = Widget.AlignmentRect;
             CardboardUnity_setWidgetCount(3);
-            CardboardUnity_setWidgetParams(
-                    0, closeTexture.GetNativeTexturePtr(), closeRect.x, closeRect.y,
-                    closeRect.width, closeRect.height);
-            CardboardUnity_setWidgetParams(
-                    1, gearTexture.GetNativeTexturePtr(), gearRect.x, gearRect.y, gearRect.width,
-                    gearRect.height);
+            
             CardboardUnity_setWidgetParams(
                     2, Texture2D.whiteTexture.GetNativeTexturePtr(), alignmentRect.x,
                     alignmentRect.y, alignmentRect.width, alignmentRect.height);
